@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock %}
+
+{% block content %}
+        <div id="container">
+            <div class="title">
+                {% if name %}
+                    <p>{{ name }}님, 환영합니다!</p>
+                {% else %}
+                    <p>로그인 해주세요.</p>
+                {% endif %}
+            </div>
+
+            <div class="login-box">
+                <h2>로그인</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div>
+                        <input type="text" name="username" placeholder="ID">
+                    </div>
+                    <div>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <div>
+                        <button type="submit">로그인</button>
+                    </div>
+                </form>
+            </div>
+            <div class="join">
+                <a href="/join/">회원가입</a>
+            </div>
+        </div>
+{% endblock %}
+
+
+
+

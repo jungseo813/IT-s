@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>아이티스 장고 실습</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_head %}
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        <div id="header_inner">
+            <nav>
+                <div class="header_logo">
+                    <img src="{% static 'images/logo.png' %}" alt="로고">
+                </div>
+                <div class="header_text">
+                    <h3>이곳은 헤더 영역입니다.</h3>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div id="footer_inner">
+            <div class="footer_text">
+                <h3>이곳은 푸터 영역입니다.</h3>
+                <p>회사명: 한양여자대학교 IT's(아이티스)</p>
+                <p>전화: 02-2290-2114</p>
+                <p>주소: 서울특별시 성동구 살곶이길 200</p>
+            </div>        
+        </div>
+    </footer>
+</body>
+</html>
